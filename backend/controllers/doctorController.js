@@ -4,6 +4,7 @@ import doctorModel from "../models/doctorModel.js";
 import appointmentModel from "../models/appointmentModel.js";
 
 // API for doctor Login 
+const frontend_URL="https://doctor-frontend-753z.onrender.com";
 const loginDoctor = async (req, res) => {
 
     try {
