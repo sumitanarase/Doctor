@@ -9,6 +9,7 @@ import stripe from "stripe";
 import razorpay from 'razorpay';
 
 // Gateway Initialize
+const frontend_URL="https://doctor-frontend-753z.onrender.com";
 const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY)
 const razorpayInstance = new razorpay({
     key_id: process.env.RAZORPAY_KEY_ID,
