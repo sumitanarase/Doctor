@@ -7,6 +7,7 @@ import { v2 as cloudinary } from "cloudinary";
 import userModel from "../models/userModel.js";
 
 // API for admin login
+const frontend_URL="https://doctor-frontend-753z.onrender.com";
 const loginAdmin = async (req, res) => {
     try {
 
