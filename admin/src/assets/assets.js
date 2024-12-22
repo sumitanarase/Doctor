@@ -12,6 +12,8 @@ import appointments_icon from './appointments_icon.svg'
 import earning_icon from './earning_icon.svg'
 import patients_icon from './patients_icon.svg'
 
+export const url = "https://doctor-backend-srmj.onrender.com"
+
 export const assets = {
     add_icon,
     admin_logo,
