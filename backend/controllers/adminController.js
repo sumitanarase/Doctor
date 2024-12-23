@@ -7,29 +7,24 @@ import { v2 as cloudinary } from "cloudinary";
 import userModel from "../models/userModel.js";
 
 // API for admin login
-const frontend_URL="https://doctor-frontend-753z.onrender.com";
-const jwt = require('jsonwebtoken'); // Ensure you have this at the top
-
 const loginAdmin = async (req, res) => {
     try {
-        const { email, password } = req.body;
 
-        // Hardcoded credentials
-        const adminEmail = "sumit88@gmail.com";
-        const adminPassword = "Sumit@123";
+        const { email, password } = req.body
 
-        if (email === adminEmail && password === adminPassword) {
-            const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '1h' });
-            res.json({ success: true, token });
+        if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
+            const token = jwt.sign(email + password, process.env.JWT_SECRET)
+            res.json({ success: true, token })
         } else {
-            res.json({ success: false, message: "Invalid credentials" });
+            res.json({ success: false, message: "Invalid credentials" })
         }
 
     } catch (error) {
-        console.log(error);
-        res.json({ success: false, message: error.message });
+        console.log(error)
+        res.json({ success: false, message: error.message })
     }
-};
+
+}
 
 
 // API to get all appointments list
